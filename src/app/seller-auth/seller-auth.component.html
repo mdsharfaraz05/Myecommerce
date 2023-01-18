@@ -1,0 +1,53 @@
+<div class="container">
+    <form class="row g-3" #sellersignup="ngForm" (ngSubmit)="signup(sellersignup.value)" *ngIf="!showlogin">
+        <h1 class="text-center">Seller Sign Up </h1>
+        <div class="col-12">
+            <label for="inputName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" ngModel name="fname" id="inputName" placeholder="First Name">
+          </div>
+        <div class="col-md-12">
+           
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" ngModel name="email" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="col-md-12">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" ngModel name="password" id="inputPassword4" placeholder="Password">
+        </div>
+        
+        
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+
+        <div class="col-12">
+          <a (click)="openLogin()">Already have account ? Click Login</a>
+        </div>
+      </form>
+
+
+
+      <!-- Log In Seller -->
+
+      <form class="row g-3" #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" *ngIf="showlogin">
+        <h1 class="text-center">Seller Log in </h1>
+       
+        <div class="col-md-12">
+           <p class="text-danger text-center">{{authError}}</p>
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" ngModel name="email" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="col-md-12">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" ngModel name="password" id="inputPassword4" placeholder="Password">
+        </div>
+        
+        
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+        <div class="col-12">
+          <a (click)="openSignup()">You don't have Accouont ? Click Sign up</a>
+        </div>
+      </form>
+</div>
